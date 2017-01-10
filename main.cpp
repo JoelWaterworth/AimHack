@@ -117,13 +117,13 @@ DWORD WINAPI TriggerThead(LPVOID PARAMS) {
 }
 
 int main() {
-
 	Module Client, Engine;
 
 	while (!debugger.Attach("csgo.exe")) {
 		std::cout << ".";
 		Sleep(500);
 	}
+
 	Client = debugger.GetModule("Client.dll");
 	dwClient = Client.dwBase;
 	Engine = debugger.GetModule("Engine.dll");
